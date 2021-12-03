@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express To-Do</title>
+</head>
+<body>
+  <a href="/">Home</a>
+  <a href="/skills">Skills List</a>
+  <h1>Skills</h1>
+  <ul>
+    <% skills.forEach(function(skill) { %>
+      <li>Skill: <a style="font-weight: bold;" href="/skills/<%= skill.id %>"><%= skill.name %></a>
+        <ul>
+          <li>Type: <%= skill.type %></li>
+          <li>Years: <%= skill.years %></li>
+        </ul>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
