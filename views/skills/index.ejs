@@ -1,9 +1,18 @@
 <%- include('../head') %>
 <%- include('../nav') %>
 <h1>Skills</h1>
-<ul>
+<table class="table table-hover">
+  <thead>
+    <tr><th>Skill</th><th>Type</th><th>Years</th></tr>
+  </thead>
+  <tbody>
   <% skills.forEach(function(skill) { %>
-    <%- include('skill-li', {skill}) %>
+    <tr>
+      <td><a style="font-weight: bold;" href="/skills/<%= skill.id %>"><%= skill.name %></a></td>
+      <td><%= skill.type %></td>
+      <td><%= skill.years %></td>
+    </tr>
   <% }); %>
-</ul>
+  </tbody>
+</table>
 <%- include('../foot') %>
