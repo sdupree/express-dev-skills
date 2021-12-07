@@ -11,11 +11,6 @@
       <td><a style="font-weight: bold;" href="/skills/<%= skill.id %>"><%= skill.name %></a></td>
       <td><%= skill.type %></td>
       <td><%= skill.years %></td>
-      <td>
-        <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
-          <button type="submit" class="btn btn-danger">X</button>
-        </form>
-      </td>
     </tr>
   <% }); %>
   </tbody>

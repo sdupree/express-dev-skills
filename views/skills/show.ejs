@@ -6,5 +6,12 @@
     <li>Years: <%= skill.years %></li>
   </ul>
 </li>
-<a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+<div>
+  <form style="display: inline;" action="/skills/<%= skill.id %>/edit">
+    <button type="submit" class="btn btn-primary">Edit Skill</button>
+  </form>
+  <form style="display: inline;" action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+    <button type="submit" class="btn btn-danger">Delete Skill</button>
+  </form>
+</div>
 <%- include('../partials/foot') %>
