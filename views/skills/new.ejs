@@ -16,7 +16,11 @@
     </select>
     <br>
     <label for="years" class="form-label">Years Of Experience:</label>
-    <input type="text" class="form-control" id="years" name="years" placeholder="4...">
+    <select class="form-select" name="years">
+      <% for(let i = 0; i < 43; i++) { %>
+        <option><%= i %></option>
+      <% } %>
+    </select>
     <br>
     <button type="submit" class="btn btn-primary">Add New Skill</button>
   </div>

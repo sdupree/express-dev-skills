@@ -15,7 +15,11 @@
     </select>
     <br>
     <label for="years" class="form-label">Years Of Experience:</label>
-    <input type="text" class="form-control" id="years" name="years" value="<%= skill.years %>">
+    <select class="form-select" name="years">
+      <% for(let i = 0; i < 43; i++) { %>
+        <option<%= i == skill.years ? ' selected' : '' %>><%= i %></option>
+      <% } %>
+    </select>
     <br>
     <button type="submit" class="btn btn-primary">Update Skill</button>
   </div>
