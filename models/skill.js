@@ -10,13 +10,27 @@ const skills = [
   {id: 8, name: 'Adobe Photoshop', type: 'Application', years: 25}
 ];
 
+const skillTypes = [
+  'Language',
+  'Framework',
+  'Operating System',
+  'Application',
+  'Device',
+  'Video Game'
+];
+
 module.exports = {
+  getSkillTypes,
   getAll,
   getOne,
   create,
   deleteOne,
   update
 };
+
+function getSkillTypes() {
+  return skillTypes;
+}
 
 function getAll() {
   return skills;
@@ -36,7 +50,7 @@ function create(skillObj) {
     }
   }
 
-  skillObj.id = max++;
+  skillObj.id = ++max;
 
   skills.push(skillObj);
 }

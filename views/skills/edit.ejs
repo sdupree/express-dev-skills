@@ -3,14 +3,22 @@
 
 <h1>Edit Skill</h1>
 <form action="/skills/<%= skill.id %>/?_method=PUT" method="post" autocomplete="off">
-  <label for="name">Skill:</label>
-  <input id="name" name="name" value="<%= skill.name %>">
-  <label for="type">Type Of Skill:</label>
-  <input id="type" name="type" value="<%= skill.type %>">
-  <label for="years">Years Of Experience:</label>
-  <input id="years" name="years" value="<%= skill.years %>">
-  <input type="hidden" value="<%= skill.id %>">
-  <button class="submit" class="btn btn-primary">Update Skill</button>
+  <div class="mb-3">
+    <label for="name" class="form-label">Skill Name:</label>
+    <input type="text" class="form-control" id="name" name="name" value="<%= skill.name %>">
+    <br>
+    <label for="type">Type Of Skill:</label>
+    <select class="form-select" name="type">
+      <% skillTypes.forEach(function(skillType) { %>
+        <option<%= skill.type === skillType ? ' selected' : '' %>><%= skillType %></option>
+      <% }); %>
+    </select>
+    <br>
+    <label for="years" class="form-label">Years Of Experience:</label>
+    <input type="text" class="form-control" id="years" name="years" value="<%= skill.years %>">
+    <br>
+    <button type="submit" class="btn btn-primary">Update Skill</button>
+  </div>
 </form>
 
 <%- include('../partials/foot') %>

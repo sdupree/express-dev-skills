@@ -3,13 +3,23 @@
 
 <h1>New Skill</h1>
 <form action="/skills" method="post" autocomplete="off">
-  <label for="name">Skill:</label>
-  <input id="name" name="name">
-  <label for="type">Type Of Skill:</label>
-  <input id="type" name="type">
-  <label for="years">Years Of Experience:</label>
-  <input id="years" name="years">
-  <button class="submit" class="btn btn-primary">Add Skill</button>
+  <div class="mb-3">
+    <label for="name" class="form-label">Skill Name:</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Name your skill...">
+    <br>
+    <label for="type">Type Of Skill:</label>
+    <select class="form-select" name="type">
+      <option selected>Select...</option>
+      <% skillTypes.forEach(function(skillType) { %>
+        <option><%= skillType %></option>
+      <% }); %>
+    </select>
+    <br>
+    <label for="years" class="form-label">Years Of Experience:</label>
+    <input type="text" class="form-control" id="years" name="years" placeholder="4...">
+    <br>
+    <button type="submit" class="btn btn-primary">Add New Skill</button>
+  </div>
 </form>
 
 <%- include('../partials/foot') %>

@@ -21,7 +21,7 @@ function show(req, res) {
 }
 
 function newSkill(req, res) {
-  res.render('skills/new');
+  res.render('skills/new', { skillTypes: Skill.getSkillTypes() } );
 }
 
 function create(req, res) {
@@ -35,7 +35,10 @@ function deleteSkill(req, res) {
 }
 
 function edit(req, res) {
-  res.render('skills/edit', { skill: Skill.getOne(req.params.id) });
+  res.render('skills/edit', {
+    skill: Skill.getOne(req.params.id),
+    skillTypes: Skill.getSkillTypes()
+  });
 }
 
 function update(req, res) {
