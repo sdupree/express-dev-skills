@@ -12,7 +12,10 @@ const skills = [
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  create,
+  deleteOne,
+  update
 };
 
 function getAll() {
@@ -21,4 +24,35 @@ function getAll() {
 
 function getOne(id) {
   return skills.find(skill => skill.id == id);
+}
+
+function create(skillObj) {
+  console.log(skillObj);
+  // Find highest ID in database, then add 1.
+  var len = skills.length, max = -Infinity;
+  while (len--) {
+    if (skills[len].id > max) {
+      max = skills[len].id;
+    }
+  }
+
+  skillObj.id = max++;
+
+  skills.push(skillObj);
+}
+
+function deleteOne(id) {
+  // Find the index in the database.
+  const idx = skills.findIndex(skill => skill.id === id);
+  // Delete it.
+  skills.splice(idx, 1);
+}
+
+function update(skillObj) {
+  // Find the index in the database.
+  const idx = skills.findIndex(skill => skill.id === skillObj.id);
+  // Only update explicitly specified properties.
+  skills[idx].name = skillObj.name;
+  skills[idx].type = skillObj.type;
+  skills[idx].years = skillObj.years;
 }

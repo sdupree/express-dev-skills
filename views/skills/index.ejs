@@ -1,7 +1,7 @@
-<%- include('../head') %>
-<%- include('../nav') %>
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
 <h1>Skills</h1>
-<table class="table table-hover">
+<table class="table table-hover table-striped">
   <thead>
     <tr><th>Skill</th><th>Type</th><th>Years</th></tr>
   </thead>
@@ -11,8 +11,13 @@
       <td><a style="font-weight: bold;" href="/skills/<%= skill.id %>"><%= skill.name %></a></td>
       <td><%= skill.type %></td>
       <td><%= skill.years %></td>
+      <td>
+        <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-danger">X</button>
+        </form>
+      </td>
     </tr>
   <% }); %>
   </tbody>
 </table>
-<%- include('../foot') %>
+<%- include('../partials/foot') %>

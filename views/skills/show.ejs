@@ -1,9 +1,10 @@
-<%- include('../head') %>
-<%- include('../nav') %>
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
 <h3>Skill: <%= skill.name %></h3>
   <ul>
     <li>Type: <%= skill.type %></li>
     <li>Years: <%= skill.years %></li>
   </ul>
 </li>
-<%- include('../foot') %>
+<a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+<%- include('../partials/foot') %>

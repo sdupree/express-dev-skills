@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<h1>New Skill</h1>
+<form action="/skills" method="post" autocomplete="off">
+  <label for="name">Skill:</label>
+  <input id="name" name="name">
+  <label for="type">Type Of Skill:</label>
+  <input id="type" name="type">
+  <label for="years">Years Of Experience:</label>
+  <input id="years" name="years">
+  <button class="submit" class="btn btn-primary">Add Skill</button>
+</form>
+
+<%- include('../partials/foot') %>
